@@ -1,0 +1,43 @@
+public class Atividade_palindromo {
+
+	public static void main(String[] args) {
+		System.out.println(palindromocheck("Rotator"));
+		System.out.println(palindromocheck("bob"));
+		System.out.println(palindromocheck("madam"));
+		System.out.println(palindromocheck("mAlAyAlam"));
+		System.out.println(palindromocheck("1"));
+		System.out.println(palindromocheck("Able was I, ere I saw Elba"));
+		System.out.println(palindromocheck("Madam I’m Adam"));
+		System.out.println(palindromocheck("Step on no pets"));
+		System.out.println(palindromocheck("Top spot"));
+		System.out.println(palindromocheck("02/02/2020"));
+		System.out.println(palindromocheck("xyz"));
+		System.out.println(palindromocheck("elephant"));
+		System.out.println(palindromocheck("Country"));
+		System.out.println(palindromocheck("Top . post!"));
+		System.out.println(palindromocheck("Wonderful-fool"));
+		System.out.println(palindromocheck("Wild imagination!"));
+
+	}
+
+	public static Boolean palindromocheck(String text) {
+		StringBuilder builder = new StringBuilder();
+		for (char c : text.toCharArray()) {
+			if (Character.isAlphabetic(c)) {
+				builder.append(Character.toLowerCase(c));
+			}
+		}
+
+		text = builder.toString();
+		int len = text.length();
+		
+		for (int i = 0; i < len / 2; ++i) {
+			if (text.charAt(i) != text.charAt(len - i - 1)) {
+				return false;
+            System.out.println("Não é Palíndromo")    
+			}
+		}
+		return true;
+        System.out.println("É Palíndromo")
+	}
+}
